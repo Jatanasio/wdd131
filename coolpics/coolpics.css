@@ -54,11 +54,12 @@ img {
     padding: 10px;
     margin: 20px;
     padding-top: 0;
+    text-decoration: underline;
 }
   
 .header-button:hover,
 .header-button:focus {
-    text-decoration: underline;
+    background-color: #59c3c3;
 }
 footer {
     background-color: #52489c;
