@@ -10,7 +10,10 @@
  --secondary-font: Mooli, san-serif;
  }
 
+    
+
 body {
+    font-size: 16px;
     font-family: var(--primary-font);
     background-color: lightgrey;
     text-align: center;
@@ -18,16 +21,61 @@ body {
 
 header {
     background-color: var(--primary-color);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer {
+    text-align: left;
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: .25px;
+    font-size: .75em;
+}
+
+h3 {
+    margin-left: 150px;
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    padding: 2px;
+    margin: 2px;
+    
+}
+
+.menu .hide {
+    display: none;
+}
+
+.nav a {
+    color: var(--text-light);
 }
 
 h1 {
     font-family: var(--secondary-font);
     color: var(--text-light);
+    font-size: 2em;
 }
 
 h2 {
     font-family: var(--secondary-font);
     color: var(--text-dark);
+    font-size: 1.25em;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: 250px;
+    gap: 20px;
+    justify-content: center;
+    padding-bottom: 20px;
 }
 
 .gallery figure {
@@ -45,24 +93,86 @@ h2 {
 }
 
 
-header button {
+.menu-button {
     all: unset;
-    display: flex;
-    flex-direction: column;
     gap: 2px;
     color: var(--text-light);
-    padding: 10px 20px;
-
-    
+    padding: 5px 10px;
+    font-size: 1.25em;
 }
 
-.nav button{
-    all: unset;
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
+.viewer {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: grid;
+    grid-template-rows: auto 1fr;
+    justify-items: center;
+    align-items: center;
+
+}
+
+.viewer .close-viewer {
+    background: none; 
+    border: none;
     color: var(--text-light);
-    padding: 10px 20px;
-    text-decoration: underline;
+    font-size: 1.5rem; 
+    cursor: pointer;
+    align-self: start; 
+    justify-self: end; 
+    margin: 10px; 
+  }
+
+.viewer img {                
+    max-width: 100%;          
+    max-height: 100%;          
+    object-fit: contain; 
+}
+
+
+@media screen and (min-width: 700px) and (max-width: 1000px){
+    .gallery {
+        grid-template-columns: repeat(2, 300px);
+    }
+
+    .menu-button{
+        padding-bottom: 10px;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .gallery {
+        grid-template-columns: repeat(3, 300px);
+    }
     
+    .menu-button {
+        display: none;
+    }
+    .nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        
+    }
+    .nav li {
+        margin: 0 50px; 
+        padding-bottom: 10px;;
+      }
+    
+    .viewer {
+        padding: 0; 
+        display: flex; 
+        justify-content: center;
+        align-items: center;
+    }
+
+    .viewer img {
+        max-width: 80%; 
+        max-height: 80%;
+        margin: auto; 
+    }
+
 }
