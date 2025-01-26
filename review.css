@@ -1,0 +1,13 @@
+body {
+    font-size: 1.2em;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+h1 {
+    font-style: italic;
+}
+
+.brand > span {
+    font-size: 4em;
+}
