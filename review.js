@@ -1,17 +1,30 @@
-// const newP = document.createElement("p");
-// newP.textContent = "Hello World";
-// document.body.append(newP);
+const steps = ["one", "two", "three"];
+const listTemplate = (step) => {
+  return `<li>${step}</li>`;
+}
+const stepsHtml = steps.map(listTemplate); // use map to convert the list from strings to HTML
+document.querySelector("#myList").innerHTML = stepsHtml.join();// set the innerHTML
 
-const newSection = document.createElement("section");
-document.body.append(newSection);
+const grades = ["A", "B", "C", "D"];
 
-const h2 = document.createElement("h2");
-h2.textContent = "DOM Basics";
-document.body.append(h2);
+const GradeConverter = (grade) => {
+    let points = 0;
+    if (grade === "A") {
+        points === 4;
+    }
+    if (grade === "B") {
+        points === 3; 
+    }
+    if (grade === "C") {
+        points === 2;
+    }
+    if (grade === "D") {
+        points === 1;
+    }
+    
 
-const newP = document.createElement("p");
-newP.textContent = "This was added through JavaScript";
-document.body.append(newP);
+    return points;
+}
 
-
- 
+const gradesHtml = grades.map(GradeConverter);
+document.querySelector("#myGrades").innerHTML =gradesHtml.join();
