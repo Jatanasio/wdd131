@@ -14,6 +14,7 @@ body {
 
 h1 {
     text-align: center;
+    font-family: var(--headline-font);
 }
 
 .nav {
@@ -24,6 +25,7 @@ h1 {
     gap: 10px;
     border-top: 2px solid var(--gold-color);
     border-bottom: 2px solid var(--gold-color);
+    padding: 10px;
 }
 
 .nav a {
@@ -35,14 +37,22 @@ h1 {
 h2, h3 {
     color: var(--red-color);
     font-family: var(--headline-font);
-    text-align: center;
+    font-size: 1.5em
 
 }
 
-.grid-container {
+.article-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+    grid-template-columns: 1fr 1.5fr; 
+    gap: 15px; 
+    align-items: start;
+}
+
+.page-grid {
+    display: grid;
+    grid-template-columns: 3fr 1fr; 
+    gap: 20px; 
+    align-items: start;
 }
 
 .left {
@@ -69,7 +79,7 @@ h2, h3 {
 }
 
 .date {
-    font-size: 1.2em;
+    font-size: 1.1em;
 }
 
 
