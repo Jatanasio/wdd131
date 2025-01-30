@@ -12,32 +12,41 @@ body {
     font-family: var(--body-font);
 }
 
+header {
+    padding-bottom: 30px;
+}
+
 h1 {
     text-align: center;
     font-family: var(--headline-font);
+    font-size: 2.5em;
 }
 
 .nav {
     display: flex;
     justify-content: flex-end;
+    margin: 0 auto;
     list-style: none;
-    align-content: end;
-    gap: 10px;
+    gap: 20px;
     border-top: 2px solid var(--gold-color);
     border-bottom: 2px solid var(--gold-color);
-    padding: 10px;
+    padding: 15px 50px;
+    font-size: 1.5em;
 }
 
 .nav a {
     
     text-decoration: none;
     color: var(--red-color);
+    margin: 0 auto;
 }
 
-h2, h3 {
+.middle h2 {
     color: var(--red-color);
     font-family: var(--headline-font);
-    font-size: 1.5em
+    font-size: 2em;
+    margin-top: 0px; /* Aligns with the date */
+    padding-top: 5px;
 
 }
 
@@ -46,42 +55,71 @@ h2, h3 {
     grid-template-columns: 1fr 1.5fr; 
     gap: 15px; 
     align-items: start;
+    margin-bottom: 30px;
 }
 
-.page-grid {
+.main-content {
     display: grid;
     grid-template-columns: 3fr 1fr; 
-    gap: 20px; 
+    gap: 10px; 
     align-items: start;
+    min-height: 100vh;
 }
 
 .left {
     text-align: right;
+    padding-left: 10px; /* Matches spacing with the middle */
+    padding-right: 15px;
+    margin-top: 20px; 
     
+}
+
+.left p {
+    margin-bottom: 5px; /* Reduces space between items */
+    line-height: .8; /* Adjusts line spacing */
 }
 
 .middle {
     border-left: 2px solid var(--gold-color);
-    border-right: 2px solid var(--gold-color);
     padding: 10px;
-    margin: 10px;
+    margin: 10px 0 10px 0;
     
 }
 
 .middle img {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 10px auto;
+    max-width: 250px;
+    max-height: 350px;
 }
 
 .right {
-    border-left: 2px colid var(--gold-color);
+    border: 2px solid var(--gold-color);
+    height: 100%;
+    margin-top: 20px; 
+    margin-left: 0;
 }
 
 .date {
-    font-size: 1.1em;
+    font-size: 1.3em;
 }
 
 
+.skiptocontent a {
+    position: absolute; 
+    top: -40px; 
+    left: 10px; 
+    background: var(--gold-color); 
+    color: var(--dark-color); 
+    padding: 10px;
+    text-decoration: none;
+    transition: top 0.3s ease;
+    z-index: 1000; 
+    display: block; 
+}
 
-
+.skiptocontent a:focus {
+    top: 0; 
+    outline: 2px solid black;
+    visibility: visible; 
+}
