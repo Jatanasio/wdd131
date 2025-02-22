@@ -127,7 +127,8 @@ button {
 }
 
 button:hover {
-  background: var(--accent1-color);
+  background: var(--secondary-color);
+  color: var(--paragraph-color-on-color)
 }
 
 .nav a {
