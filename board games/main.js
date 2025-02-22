@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let boardState = ["", "", "", "", "", "", "", "", ""];
     let gameActive = true;
 
-    // Winning combinations
+    
     const winPatterns = [
         [0, 1, 2],
         [3, 4, 5],
@@ -19,11 +19,11 @@ document.addEventListener("DOMContentLoaded", () => {
         [2, 4, 6]
     ];
 
-    // Handle cell clicks
+    
     function handleCellClick(e) {
         const index = e.target.dataset.index;
 
-        // Prevent overwriting moves or clicking after game ends
+        
         if (boardState[index] !== "" || !gameActive) {
             return;
         }
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // Check for a winner
+    
     function checkWinner() {
         for (const pattern of winPatterns) {
             const [a, b, c] = pattern;
@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // Restart game
+    
     function restartGame() {
         boardState = ["", "", "", "", "", "", "", "", ""];
         gameActive = true;
@@ -65,7 +65,49 @@ document.addEventListener("DOMContentLoaded", () => {
         cells.forEach(cell => cell.textContent = "");
     }
 
-    // Attach event listeners to each cell
+    
     cells.forEach(cell => cell.addEventListener("click", handleCellClick));
     restartButton.addEventListener("click", restartGame);
+});
+
+
+// Chat logic
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Select elements
+    const chatInput = document.getElementById("chat-box");
+    const sendButton = document.getElementById("send-message");
+    const chatDisplay = document.querySelector(".chat-display");
+
+    // Function to send a message
+    function sendMessage() {
+        const messageText = chatInput.value.trim(); // Get text and trim spaces
+        
+        if (messageText === "") return; // Ignore empty messages
+
+        // Create a new message element
+        const messageElement = document.createElement("p");
+        messageElement.textContent = messageText;
+        messageElement.classList.add("chat-message");
+
+        // Append message to chat display
+        chatDisplay.appendChild(messageElement);
+
+        // Scroll chat to latest message
+        chatDisplay.scrollTop = chatDisplay.scrollHeight;
+
+        // Clear the input field
+        chatInput.value = "";
+    }
+
+    // Event listener for send button click
+    sendButton.addEventListener("click", sendMessage);
+
+    // Allow sending messages by pressing "Enter"
+    chatInput.addEventListener("keypress", (event) => {
+        if (event.key === "Enter") {
+            event.preventDefault(); // Prevent new lines in textarea
+            sendMessage();
+        }
+    });
 });

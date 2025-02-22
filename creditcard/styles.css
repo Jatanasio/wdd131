@@ -1,0 +1,110 @@
+#form-container {
+    margin: auto;
+    width: 500px;
+    height: 290px;
+    position: relative;
+  }
+
+#card-container {
+    
+}
+
+input {
+    
+    background-color: white;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 10px;
+    margin: 0 0 25px;
+    color: black;
+    box-sizing: border-box;
+    border-radius: 4px;
+    
+}
+
+#card-stripe {
+    width: 100%;
+    height: 55px;
+    background-color: black;
+    position: absolute;
+    right: 0;
+  }
+
+.front,
+.back {
+    position: absolute;
+    background-color: lightgrey;
+    width: 390px;
+    height: 250px;
+    border-radius: 6px;
+    padding: 20px 30px 0;
+    box-sizing: border-box;
+    
+    color: black;
+}
+
+.back {
+    top: 40px;
+    right: 0;
+    z-index: -2;
+}
+
+#card-image {
+    float: right;
+    height: 100%;
+}
+  
+#card-image i {
+    font-size: 40px;
+}
+
+
+#card-month {
+    width: 15%;
+}
+
+#card-year {
+    width: 15%;
+    float: right;
+}
+  
+#cardholder-container {
+    width: 60%;
+    display: inline-block;
+}
+  
+#cvc-container {
+    position: absolute;
+    width: 110px;
+    right: -115px;
+    bottom: -10px;
+    padding-left: 20px;
+    box-sizing: border-box;
+}
+#cvc {
+    width: 60px;
+    margin-bottom: 0;
+}
+  
+#cvc-container label {
+    width: 15%;
+}
+  
+#cvc-container p {
+    font-size: 6px;
+    text-transform: uppercase;
+    opacity: 0.6;
+    letter-spacing: .5px;
+}
+
+.submit-button {
+    background-color: lightgrey;
+    color: black;
+    position: absolute;
+    bottom: -55px;
+    right: 0;
+    width: 150px;
+    border-radius: 8px;
+    height: 42px;
+    font-size: 12px;
+  }
