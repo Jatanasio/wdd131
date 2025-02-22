@@ -169,3 +169,8 @@ h6 {
     gap: 10px;
   }
   }
+
+  .logo {
+    max-width: 150px;
+    height: auto;
+  }
